@@ -2,6 +2,7 @@ package com.daw.esdla.service;
 
 import com.daw.esdla.dto.PersonajeDTO;
 import com.daw.esdla.model.Personaje;
+import com.daw.esdla.model.Raza;
 import com.daw.esdla.repository.PersonajeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +33,28 @@ public class PersonajeService {
                 personaje.getNivelCorrupcion()
 
         );
+    }
+
+    public PersonajeDTO insertarPersonaje(PersonajeDTO dto) {
+        Personaje personaje = new Personaje(null,dto.getNombre(), Raza.valueOf(dto.getRaza()),dto.getFechaNacimiento(),dto.getNivelCorrupcion());
+        personaje = personajeRepository.save(personaje);
+        dto.setId(personaje.getId());
+        return dto;
+    }
+
+    public PersonajeDTO actualizarPersonaje(Long id, PersonajeDTO dto) {
+
+        Personaje personaje = personajeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Personaje no encontrado"));
+
+        personaje.setNombre(dto.getNombre());
+        personaje.setRaza(Raza.valueOf(dto.getRaza()));
+        personaje.setFechaNacimiento(dto.getFechaNacimiento());
+        personaje.setNivelCorrupcion(dto.getNivelCorrupcion());
+
+        personaje = personajeRepository.save(personaje);
+
+        dto.setId(personaje.getId());
+        return dto;
     }
 }

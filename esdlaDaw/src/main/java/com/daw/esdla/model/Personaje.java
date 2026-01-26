@@ -34,6 +34,14 @@ public class Personaje {
         this.nivelCorrupcion = nivelCorrupcion;
     }
 
+    public Personaje(Long id, String nombre, Raza raza, LocalDate fechaNacimiento, int nivelCorrupcion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.raza = raza;
+        this.fechaNacimiento = fechaNacimiento;
+        this.nivelCorrupcion = nivelCorrupcion;
+    }
+
     public Long getId() {
         return id;
     }
