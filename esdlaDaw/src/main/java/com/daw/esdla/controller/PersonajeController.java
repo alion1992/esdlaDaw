@@ -3,11 +3,13 @@ package com.daw.esdla.controller;
 import com.daw.esdla.dto.PersonajeDTO;
 import com.daw.esdla.service.PersonajeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -46,9 +48,21 @@ public class PersonajeController {
     }
 
     @DeleteMapping("/api/bajaFisica/{id}")
-    public ResponseEntity<Void> bajaFisicaPersonaje(
+    public ResponseEntity<Map<String, String>> bajaFisicaPersonaje(
             @PathVariable Long id) {
-         personajeService.bajaFisica(id);
-         return ResponseEntity.ok().build();
+        try{
+            personajeService.bajaFisica(id);
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            Map<String, String> error = new HashMap<>();
+            error.put("error", "No se pudo eliminar el personaje");
+            error.put("detalle", e.getMessage());
+
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(error);
+        }
+
+
     }
 }

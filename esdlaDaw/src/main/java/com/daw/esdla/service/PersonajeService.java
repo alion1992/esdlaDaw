@@ -67,7 +67,7 @@ public class PersonajeService {
         Personaje personaje = personajeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Personaje no encontrado"));
         personaje.setFechaBaja(new Date());
-
+        personajeRepository.save(personaje);
         return PersonajeMapper.map(personaje);
 
     }

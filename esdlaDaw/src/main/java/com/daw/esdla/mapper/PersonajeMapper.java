@@ -40,6 +40,8 @@ public class PersonajeMapper {
         dto.setNivelCorrupcion(personaje.getNivelCorrupcion());
         dto.setRaza(personaje.getRaza() != null ? personaje.getRaza().name() : null
         );
+        dto.setId(personaje.getId());
+        if(null != personaje.getFechaBaja())dto.setFechaBaja(personaje.getFechaBaja());
 
         return dto;
     }
