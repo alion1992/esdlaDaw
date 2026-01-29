@@ -75,4 +75,12 @@ public class PersonajeService {
     public void bajaFisica(Long id) {
         personajeRepository.deleteById(id);
     }
+
+    public PersonajeDTO reactivarPersonaje(Long id) {
+        Personaje personaje = personajeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Personaje no encontrado"));
+        personaje.setFechaBaja(null);
+        personajeRepository.save(personaje);
+        return PersonajeMapper.map(personaje);
+    }
 }

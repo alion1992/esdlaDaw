@@ -47,6 +47,12 @@ public class PersonajeController {
         return personajeService.bajaLogicaPersonaje(id);
     }
 
+    @PutMapping("/api/reactivar/{id}")
+    public PersonajeDTO reactivar(
+            @PathVariable Long id) {
+        return personajeService.reactivarPersonaje(id);
+    }
+
     @DeleteMapping("/api/bajaFisica/{id}")
     public ResponseEntity<Map<String, String>> bajaFisicaPersonaje(
             @PathVariable Long id) {
@@ -62,6 +68,7 @@ public class PersonajeController {
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(error);
         }
+
 
 
     }
