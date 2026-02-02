@@ -23,7 +23,7 @@ public class PersonajeService {
     public List<PersonajeDTO> findAll() {
         return personajeRepository.findAll()
                 .stream()
-                .map(u -> new PersonajeDTO(u.getId(),u.getNombre(),u.getRaza().toString(),u.getFechaNacimiento(),u.getNivelCorrupcion()))
+                .map(u -> new PersonajeDTO(u.getId(),u.getNombre(),u.getRaza().toString(),u.getFechaNacimiento(),u.getNivelCorrupcion(),u.getFechaBaja()))
                 .toList();
     }
 
@@ -35,7 +35,8 @@ public class PersonajeService {
                 personaje.getNombre(),
                 personaje.getRaza().toString(),
                 personaje.getFechaNacimiento(),
-                personaje.getNivelCorrupcion()
+                personaje.getNivelCorrupcion(),
+                personaje.getFechaBaja()
 
         );
     }

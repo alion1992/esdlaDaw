@@ -21,13 +21,15 @@ public class PersonajeDTO {
             String nombre,
             String raza,
             LocalDate fechaNacimiento,
-            int nivelCorrupcion
+            int nivelCorrupcion,
+            Date fechaBaja
     ) {
         this.id = id;
         this.nombre = nombre;
         this.raza = raza;
         this.fechaNacimiento = fechaNacimiento;
         this.nivelCorrupcion = nivelCorrupcion;
+        this.fechaBaja = fechaBaja;
     }
 
     public Long getId() {
