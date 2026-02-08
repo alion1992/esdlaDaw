@@ -17,8 +17,6 @@ public class PersonajeService {
 
     @Autowired
     private PersonajeRepository personajeRepository;
-    @Autowired
-    private DataSource dataSource;
 
     public List<PersonajeDTO> findAll() {
         return personajeRepository.findAll()
