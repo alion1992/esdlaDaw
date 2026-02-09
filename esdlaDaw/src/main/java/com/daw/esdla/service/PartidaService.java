@@ -54,4 +54,15 @@ public class PartidaService {
                 partida.getNumeroCorrectas()
         );
     }
+
+    public PartidaDTO empezarPartida(){
+        Partida partida = new Partida(LocalDateTime.now(),null,0);
+        partida = partidaRepository.save(partida);
+        return new PartidaDTO(
+                partida.getId(),
+                partida.getFechaInicio(),
+                partida.getFechaFin(),
+                partida.getNumeroCorrectas()
+        );
+    }
 }

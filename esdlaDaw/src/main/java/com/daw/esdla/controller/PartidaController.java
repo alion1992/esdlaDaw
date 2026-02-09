@@ -22,6 +22,16 @@ public class PartidaController {
         return ResponseEntity.ok(partida);
     }
 
+    @GetMapping("/api/empezarPartida/")
+    public ResponseEntity<PartidaDTO> empezarPartida() {
+
+        PartidaDTO partida = partidaService.empezarPartida();
+
+        return ResponseEntity.ok(partida);
+    }
+
+
+
     @PutMapping("/api/correcta/{id}/")
     public ResponseEntity<PartidaDTO> actualizarCorrectas(@PathVariable Long id) {
 
@@ -30,7 +40,7 @@ public class PartidaController {
         return ResponseEntity.ok(partidaActualizada);
     }
 
-    @PutMapping("/api/derrota/{id}/")
+    @PutMapping("/api/finalizar/{id}/")
     public ResponseEntity<PartidaDTO> derrotaPartida(@PathVariable Long id) {
 
         PartidaDTO partidaFinalizada = partidaService.derrotaPartida(id);
