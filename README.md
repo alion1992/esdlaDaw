@@ -67,6 +67,62 @@ Se mostrará el siguiente mensaje en la ventana emergente: ¿Deseas reactivar el
 En caso afirmativo se llamará al nuevo servicio:
 #### ("/api/reactivar({id}")
 
+## Parte 3/3
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/116898b2-61e7-4809-9e88-f351b8ef8f62" />
+
+Vamos a por la última parte de nuestra aplicación web en angular!. Esta última parte esta destinada a hacer un pequeño juego de preguntas y respuestas para ver los conocimientos que teneis del señor de los anillos.
+
+A través de un nuevo servicio:
+
+```code
+("/api/obtenerPregunta/{id}")
+```
+
+No devuelve una serie de preguntas y 4 posibles respuesta:
+
+<img width="398" height="204" alt="image" src="https://github.com/user-attachments/assets/92934cc9-64d9-4b26-887b-419cacd69e8b" />
+
+Como podemos observar la respuesta correcta no viene informada ya que por seguridad cada vez que el usuario responde una pregunta el servidor debe confirmar si es correcta:
+
+```code
+http://localhost:8082/api/respuesta/1/?respuestaUsuario=2
+```
+
+<img width="345" height="115" alt="image" src="https://github.com/user-attachments/assets/c35b0390-3374-4b34-99cc-d2e596a19c01" />
+
+En caso afirmativo devuelve un true, en caso de que la respuesta sea incorrecta devolverá un false.
+
+Bueno pues una vez que ya sabemos como conseguir las preguntas y respuestas vamos a poner las reglas del juego:
+
+1. Cuando se empieza una partida se tiene un endpoint disponible:
+   ```code
+   @PostMapping("/api/empezarPartida/")
+   ```
+2. Cuando un usuario acierta una pregunta se actualiza la partida sumandole un punto:
+```code
+@PutMapping("/api/correcta/{id}/")
+```
+3. Cuando un usuario acierta 5 preguntas seguidas se cierra la partida:
+```code
+    @PutMapping("/api/finalizar/{id}/")
+```
+4. Al igual que cuando falla una pregunta automaticamente pierde y se finaliza el juego.
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/809f7d90-7875-4155-94d4-fdbe3142164a" />
+
+5. Generar un componente de estadísticas de las partidas que se han jugado, victorias, derrotas. 
+
+### Aclaración:
+
+Como podemos observar no hay ningún modelo para guardar ni el usuario que juega ni el historial de las partidas.
+Esto debe hacerse a nivel local (localStorage o sessionStorage).
+
+En un mismo juego no pueden repetirse preguntas, es decir, si un usuario ya ha contentado a la pregunta número 1 no debería volver a preguntarle la misma.
+
+
+
+
 
 
 
