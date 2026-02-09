@@ -69,6 +69,8 @@ En caso afirmativo se llamará al nuevo servicio:
 
 ## Parte 3/3
 
+50% del RA2 50% del RA4
+
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/116898b2-61e7-4809-9e88-f351b8ef8f62" />
 
 Vamos a por la última parte de nuestra aplicación web en angular!. Esta última parte esta destinada a hacer un pequeño juego de preguntas y respuestas para ver los conocimientos que teneis del señor de los anillos.
