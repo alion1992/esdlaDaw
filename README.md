@@ -113,7 +113,10 @@ Bueno pues una vez que ya sabemos como conseguir las preguntas y respuestas vamo
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/809f7d90-7875-4155-94d4-fdbe3142164a" />
 
-5. Generar un componente de estadísticas de las partidas que se han jugado, victorias, derrotas. 
+5. Generar un componente de estadísticas de las partidas que se han jugado, victorias, derrotas. Por ejemplo un boceto sería el siguiente:
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/5c8a8eff-e73f-4d86-a6fc-c81709986725" />
+
 
 ### Aclaración:
 
