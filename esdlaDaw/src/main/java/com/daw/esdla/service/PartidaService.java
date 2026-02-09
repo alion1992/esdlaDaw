@@ -24,7 +24,8 @@ public class PartidaService {
                 partida.getId(),
                 partida.getFechaInicio(),
                 partida.getFechaFin(),
-                partida.getNumeroCorrectas()
+                partida.getNumeroCorrectas(),
+                false
         );
     }
 
@@ -37,7 +38,8 @@ public class PartidaService {
                 partida.getId(),
                 partida.getFechaInicio(),
                 partida.getFechaFin(),
-                partida.getNumeroCorrectas()
+                partida.getNumeroCorrectas(),
+                false
         );
 
     }
@@ -51,7 +53,8 @@ public class PartidaService {
                 partida.getId(),
                 partida.getFechaInicio(),
                 partida.getFechaFin(),
-                partida.getNumeroCorrectas()
+                partida.getNumeroCorrectas(),
+                true
         );
     }
 
@@ -62,7 +65,8 @@ public class PartidaService {
                 partida.getId(),
                 partida.getFechaInicio(),
                 partida.getFechaFin(),
-                partida.getNumeroCorrectas()
+                partida.getNumeroCorrectas(),
+                false
         );
     }
 }

@@ -8,15 +8,17 @@ public class PartidaDTO {
     private LocalDateTime fechaInicio;
     private LocalDateTime fechaFin;
     private int numeroCorrectas;
+    private boolean finPartida = false;
 
     public PartidaDTO() {
     }
 
-    public PartidaDTO(Long id, LocalDateTime fechaInicio, LocalDateTime fechaFin, int numeroCorrectas) {
+    public PartidaDTO(Long id, LocalDateTime fechaInicio, LocalDateTime fechaFin, int numeroCorrectas, boolean finPartida) {
         this.id = id;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.numeroCorrectas = numeroCorrectas;
+        this.finPartida = finPartida;
     }
 
     public Long getId() {
@@ -45,5 +47,13 @@ public class PartidaDTO {
 
     public void setNumeroCorrectas(int numeroCorrectas) {
         this.numeroCorrectas = numeroCorrectas;
+    }
+
+    public boolean isFinPartida() {
+        return finPartida;
+    }
+
+    public void setFinPartida(boolean finPartida) {
+        this.finPartida = finPartida;
     }
 }
