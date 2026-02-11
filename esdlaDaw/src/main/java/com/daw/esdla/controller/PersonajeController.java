@@ -18,7 +18,6 @@ public class PersonajeController {
     @Autowired
     private PersonajeService personajeService;
 
-
     @GetMapping("/api/listaPersonajes")
     public List<PersonajeDTO> listar() {
         return personajeService.findAll();

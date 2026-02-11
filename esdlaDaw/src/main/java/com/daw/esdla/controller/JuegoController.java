@@ -33,7 +33,7 @@ public class JuegoController {
     }
 
 
-    @GetMapping("/api/respuestaMejorada/{id}/")
+    @GetMapping("/api/respuestaMejorada/{id}/{idPartida}")
     public ResponseEntity<PartidaDTO> comprobarRespuestaActualizaPartida(
             @PathVariable Long id, @PathVariable Long idPartida,
             @RequestParam int respuestaUsuario){
