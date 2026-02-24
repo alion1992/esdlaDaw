@@ -45,7 +45,7 @@ public class JuegoService {
     }
 
     public PartidaDTO obtenerRespuestaMejorada(Long id, Long idPartida, int respuestaUsuario) {
-        Partida partida = partidaRepository.findById(id)
+        Partida partida = partidaRepository.findById(idPartida)
                 .orElseThrow(() -> new RuntimeException("Partida no encontrada con id: " + id));
 
         Juego juego = juegoRepository.findById(id)
