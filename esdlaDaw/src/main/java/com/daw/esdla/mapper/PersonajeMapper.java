@@ -14,7 +14,7 @@ public class PersonajeMapper {
         personaje.setNombre(dto.getNombre());
         personaje.setFechaNacimiento(dto.getFechaNacimiento());
         personaje.setNivelCorrupcion(dto.getNivelCorrupcion());
-
+        //comentario
         personaje.setRaza(parseRaza(dto.getRaza()));
 
         return personaje;
