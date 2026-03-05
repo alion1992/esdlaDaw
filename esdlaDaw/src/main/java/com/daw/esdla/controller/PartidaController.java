@@ -22,7 +22,7 @@ public class PartidaController {
         return ResponseEntity.ok(partida);
     }
 
-    @GetMapping("/api/empezarPartida/")
+    @GetMapping("/api/empezarPartidas/")
     public ResponseEntity<PartidaDTO> empezarPartida() {
 
         PartidaDTO partida = partidaService.empezarPartida();
